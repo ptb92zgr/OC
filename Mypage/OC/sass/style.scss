@@ -1,0 +1,277 @@
+/*<a href="https://pl.freepik.com/wektory/etykieta">Etykieta plik wektorowy utworzone przez ibrandify - pl.freepik.com</a>*/
+
+$primaryTranspColor: rgba(255, 255, 255, 0.2);
+$secondaryTranspColor: rgba(255, 183, 0, 0.6);
+$primaryColor: #fff;
+$secondaryColor: rgb(255, 183, 0);
+$descriptionColor: rgb(191, 191, 191);
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 1.6rem;
+	background-image: url(../../../Mypage/OC/images/background.jpg);
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: "Lato", sans-serif;
+}
+
+/*navigation*/
+
+.menu__btn {
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin: 5px;
+	background: none;
+	border: none;
+	z-index: 99;
+}
+
+.ham {
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	transition: transform 400ms;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.hamRotate.active {
+	transform: rotate(45deg);
+}
+.hamRotate180.active {
+	transform: rotate(180deg);
+}
+.line {
+	fill: none;
+	transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+	stroke: $primaryColor;
+	stroke-width: 5.5;
+	stroke-linecap: round;
+}
+
+.ham .top {
+	stroke-dasharray: 40 172;
+}
+.ham .middle {
+	stroke-dasharray: 40 111;
+}
+.ham .bottom {
+	stroke-dasharray: 40 172;
+}
+.ham.active .top {
+	stroke-dashoffset: -132px;
+}
+.ham.active .middle {
+	stroke-dashoffset: -71px;
+}
+.ham.active .bottom {
+	stroke-dashoffset: -132px;
+}
+
+.menu__links {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 60vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-transform: uppercase;
+	font-size: 2rem;
+	transition: 0.7s ease-out;
+	background: $primaryTranspColor;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+	z-index: 80;
+	text-align: center;
+
+	&__item {
+		position: relative;
+		left: 10%;
+		width: 100%;
+		height: 20vh;
+		text-decoration: none;
+		line-height: 25vh;
+		color: $primaryColor;
+		transition: 0.3s;
+	}
+}
+
+.menu__links__item:hover {
+	color: $secondaryColor;
+}
+
+.show__menu {
+	right: 0;
+}
+
+/*header*/
+
+.welcome {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-self: start;
+	align-items: center;
+
+	&__text {
+		position: absolute;
+		color: $secondaryColor;
+		top: 25%;
+		margin: 0 10%;
+		font-size: 4rem;
+		z-index: -1;
+	}
+
+	&__btn {
+		position: relative;
+		top: 25%;
+		left: 50%;
+		width: 240px;
+		height: 50px;
+		border: none;
+		border-radius: 25px;
+		transform: translate(-50%, -50%);
+		background-color: $secondaryColor;
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 50px;
+		font-size: 1.6rem;
+		transition: 0.3s;
+		text-decoration: none;
+		color: #000;
+		z-index: 0;
+	}
+}
+
+.welcome__btn:hover {
+	background-color: $primaryColor;
+	color: $secondaryColor;
+}
+
+/*about*/
+
+.about,
+.offer__offer-box,
+.prices {
+	transform: scale(0.9);
+	width: 90%;
+	margin: 0 auto 50px;
+	padding: 20px 20px;
+	background: $primaryTranspColor;
+	border-radius: 5px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	text-align: center;
+	transition: 0.4s;
+	opacity: 0.2;
+
+	&__title {
+		text-transform: uppercase;
+		font-size: 3.2rem;
+		color: $secondaryColor;
+		border-bottom: 1px solid $secondaryColor;
+		padding-bottom: 20px;
+	}
+
+	&__subtitle {
+		text-transform: uppercase;
+		font-size: 2.5rem;
+		color: $secondaryColor;
+		border-bottom: 1px solid $secondaryColor;
+		padding-bottom: 20px;
+	}
+
+	&__description,
+	&__description-list {
+		margin-top: 20px;
+		text-align: center;
+		font-size: 2rem;
+		color: $descriptionColor;
+		list-style-type: none;
+
+		span {
+			font-weight: bold;
+		}
+	}
+
+	&__icons {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		font-size: 3.2rem;
+		color: $primaryColor;
+		background: none;
+
+		ion-icon {
+			margin: 30px;
+		}
+	}
+}
+
+.go-to {
+	color: $primaryColor;
+}
+
+.appear {
+	transform: scale(1);
+	opacity: 1;
+}
+
+/*footer*/
+
+.footer {
+	width: 100%;
+	height: 340px;
+	background: $secondaryTranspColor;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	text-align: center;
+
+	&__title {
+		width: 40%;
+		font-size: 3rem;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 2px solid black;
+	}
+
+	&__link {
+		color: $primaryColor;
+		text-decoration: none;
+		margin: 10px auto 20px;
+	}
+	&__icon {
+		font-size: 1.6rem;
+		margin-right: 15px;
+	}
+}
